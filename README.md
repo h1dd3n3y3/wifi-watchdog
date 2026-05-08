@@ -1,10 +1,10 @@
 # wifi-watchdog
 
-A small systemd-based watchdog that keeps a Raspberry Pi Zero 2 W online over WiFi by bouncing `wlan0` whenever the default gateway becomes unreachable.
+A small systemd-based watchdog that keeps my Raspberry Pi Zero 2W online over WiFi by bouncing `wlan0` whenever the default gateway becomes unreachable.
 
 ## Why this exists
 
-The Pi Zero 2 W in question has no Ethernet, sits at roughly **-62 dBm** signal, and connects through a router with **band steering** enabled. The combination causes the Pi to occasionally lose its WiFi association and never recover on its own — leaving the device unreachable until someone power-cycles it.
+A distant Raspberry Pi Zero 2W sits at roughly **-62 dBm** signal, and connects through a router with **band steering** enabled. The combination causes the Pi to occasionally lose its WiFi association and never recover on its own — leaving the device unreachable until someone power-cycles it. The specific Pi is acting as my personal IR remote, integrating with a Home Assistant HACS Integration, to be able to control my amplifier.
 
 This watchdog runs every minute, pings the default gateway through `wlan0`, and if the pings fail it brings the interface down and back up. That's enough to force a fresh association and get the Pi back on the network without a reboot.
 
