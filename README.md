@@ -26,6 +26,22 @@ sudo ./install.sh
 
 The installer copies the script to `/usr/local/bin/`, drops the systemd units into `/etc/systemd/system/`, and enables the timer.
 
+## Update
+
+```sh
+sudo ./update.sh
+```
+
+Pulls the latest changes (if it's a git checkout), reinstalls the script and units, and restarts the timer.
+
+## Uninstall
+
+```sh
+sudo ./uninstall.sh
+```
+
+Disables and removes the timer, service, and script.
+
 ## Verify
 
 ```sh
