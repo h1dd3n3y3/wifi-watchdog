@@ -21,7 +21,7 @@ This watchdog runs every minute, pings the default gateway through `wlan0`, and 
 On the Pi:
 
 ```sh
-git clone <this repo>
+git clone https://github.com/h1dd3n3y3/wifi-watchdog.git
 cd wifi-watchdog
 sudo ./install.sh
 ```
